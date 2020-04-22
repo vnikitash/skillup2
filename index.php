@@ -1,8 +1,16 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-$db = new mysqli('127.0.0.1', 'root', '', 'test');
+try {
+    $db = new mysqli("db", 'root', '', 'test');
 
-$res = $db->query("SELECT * FROM users");
-$users = $res->fetch_assoc();
+    $res = $db->query("SELECT * FROM users LEFT JOIN orders ON orders.user_id = users.id;");
+    $result = $res->fetch_all(MYSQLI_ASSOC);
 
-print_r($users);
+    print_r($result);
+
+} catch (Exception $e) {
+    die($e->getMessage());
+}

@@ -3,7 +3,6 @@ services:
   db:
     image: mysql:5.7
     container_name: skillup1-mysql1
-    restart: always
     environment:
       MYSQL_DATABASE: test
       MYSQL_USER: root
