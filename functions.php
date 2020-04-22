@@ -1,4 +1,5 @@
 <?php
+
 function getLoginView()
 {
     global $smarty;
@@ -17,11 +18,21 @@ function getRegisterView()
     $smarty->display('form.tpl');
 }
 
-function getDeafaultPage() {
+function getDefaultPage()
+{
     global $smarty;
 
-    $smarty->assign('type', 'Register');
-    $smarty->assign('action', 'register');
+    $data = [];
+
+    for ($i = 0; $i < 100; $i++) {
+        $data[] = [
+            'test' => 'test '. $i,
+            'meta' => 'meta ' . $i,
+            'ololo' => rand(1,100)
+        ];
+    }
+
+    $smarty->assign('data', $data);
     $smarty->display('index.tpl');
 }
 

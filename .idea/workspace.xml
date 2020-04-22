@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="82993074-b149-4330-94ee-09634cb2379b" name="Default" comment="" />
+    <list default="true" id="82993074-b149-4330-94ee-09634cb2379b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,42 +22,25 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@192.168.64.2" type="feb32156:DbDataSourceImpl" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="3" selection-start-line="3" selection-end-line="6" selection-end-column="37" />
+            <state relative-caret-position="337">
+              <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/form.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="14" column="11" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="14" selection-end-column="11" />
-              <folding>
-                <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="403">
+              <caret line="33" column="25" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -63,53 +48,26 @@
       <file leaf-file-name="index.tpl" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index.tpl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+            <state relative-caret-position="165">
+              <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/layout.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="12" selection-end-column="7" />
+      <file leaf-file-name="users" pinned="false" current-in-tab="false">
+        <entry file="das://c76b1d63-36de-4633-87e6-2dbfb6a2467a/schema/test/table/users">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header2.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/header2.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.tpl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/header.tpl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="891">
-              <caret line="33" column="6" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="b.min.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/b.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Smarty.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/Smarty.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="109" column="22" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
+      <file leaf-file-name="products" pinned="false" current-in-tab="false">
+        <entry file="das://c76b1d63-36de-4633-87e6-2dbfb6a2467a/schema/test/table/products">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -117,8 +75,8 @@
       <file leaf-file-name="docker-compose.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+            <state relative-caret-position="58">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -139,6 +97,9 @@
       <find>data</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -148,7 +109,6 @@
         <option value="$PROJECT_DIR$/templates/functions.php" />
         <option value="$PROJECT_DIR$/templates/login.tpl" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/templates/index.tpl" />
         <option value="$PROJECT_DIR$/templates/form.tpl" />
         <option value="$PROJECT_DIR$/jquery.js" />
@@ -158,6 +118,7 @@
         <option value="$PROJECT_DIR$/templates/header.tpl" />
         <option value="$PROJECT_DIR$/templates/header2.tpl" />
         <option value="$PROJECT_DIR$/templates/layout.tpl" />
+        <option value="$PROJECT_DIR$/functions.php" />
       </list>
     </option>
   </component>
@@ -175,28 +136,29 @@
     <option name="width" value="1440" />
     <option name="height" value="804" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="untitled11" type="b2602c69:ProjectViewProjectNode" />
-              <item name="untitled11" type="462c0819:PsiDirectoryNode" />
+              <item name="untitled16" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled16" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="untitled11" type="b2602c69:ProjectViewProjectNode" />
-              <item name="untitled11" type="462c0819:PsiDirectoryNode" />
+              <item name="untitled16" type="b2602c69:ProjectViewProjectNode" />
+              <item name="untitled16" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -245,31 +207,44 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10682000" />
+    <option name="totallyTimeSpent" value="10784000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32969698" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26037195" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" weight="0.19384836" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19170243" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.15593705" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32969698" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2860606" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26037195" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" order="3" weight="0.19384836" />
       <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32969698" />
       <window_info anchor="bottom" id="Find" order="2" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32969698" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,30 +254,121 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/functions.php" />
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        <state relative-caret-position="180">
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c76b1d63-36de-4633-87e6-2dbfb6a2467a/console_1.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c76b1d63-36de-4633-87e6-2dbfb6a2467a/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+        <state>
+          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/table.tpl" />
+    <entry file="file://$PROJECT_DIR$/mysqldump.php" />
+    <entry file="file://$PROJECT_DIR$/functions.php" />
+    <entry file="file://$PROJECT_DIR$/users.json" />
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/libs/plugins/function.math.php" />
+    <entry file="file://$PROJECT_DIR$/mysqldump.php" />
+    <entry file="file://$PROJECT_DIR$/users.json" />
+    <entry file="file://$PROJECT_DIR$/templates/table.tpl" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c76b1d63-36de-4633-87e6-2dbfb6a2467a/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions.php" />
+    <entry file="file://$PROJECT_DIR$/.gitignore" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c76b1d63-36de-4633-87e6-2dbfb6a2467a/console_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c76b1d63-36de-4633-87e6-2dbfb6a2467a/schema/test/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c76b1d63-36de-4633-87e6-2dbfb6a2467a/schema/test/table/products">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c76b1d63-36de-4633-87e6-2dbfb6a2467a/schema/test/table/order_products">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/c76b1d63-36de-4633-87e6-2dbfb6a2467a/console_2.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d323715e-bd7d-4cc0-b03d-cb94a49e4ebd/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="47" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seed.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/aae36757-ac58-4a97-b347-47a846cce94a/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -310,24 +376,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cars.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="34" lean-forward="true" selection-start-column="34" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cars.txt" />
+    <entry file="file://$PROJECT_DIR$/templates/functions.php" />
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+        <state relative-caret-position="58">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -356,9 +410,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="14" column="11" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="14" selection-end-column="11" />
-          <folding>
-            <element signature="n#style#0;n#form#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -366,9 +417,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="88059" selection-start-line="1" selection-start-column="88059" selection-end-line="1" selection-end-column="88059" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -390,16 +438,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="39553" selection-start-line="5" selection-start-column="39553" selection-end-line="5" selection-end-column="39553" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -424,17 +462,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" selection-start-line="3" selection-end-line="6" selection-end-column="37" />
+        <state relative-caret-position="403">
+          <caret line="33" column="25" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
+    <entry file="file://$PROJECT_DIR$/templates/index.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="165">
+          <caret line="11" column="41" lean-forward="true" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
         </state>
       </provider>
     </entry>

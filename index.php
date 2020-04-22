@@ -27,7 +27,7 @@ switch ($action) {
         }
         break;
     default:
-        getDeafaultPage();
+        getDefaultPage();
 }
 
 
