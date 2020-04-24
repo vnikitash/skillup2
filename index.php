@@ -36,6 +36,9 @@ switch ($action) {
     case "logout":
         processLogoutRequest();
         break;
+    case 'cart':
+        die("cart");
+        break;
     case "products":
         processProductsRequest();
         break;
