@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-04-08 18:24:59
+/* Smarty version 3.1.34-dev-7, created on 2020-04-24 18:32:18
   from '/app/templates/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5e8e16fbd9e159_30953769',
+  'unifunc' => 'content_5ea330b26aabc3_57130091',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '62a57e98dc59eb9980b333f8b11c64d5b8ec7c70' => 
     array (
       0 => '/app/templates/header.tpl',
-      1 => 1586370250,
+      1 => 1587753135,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5e8e16fbd9e159_30953769 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ea330b26aabc3_57130091 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -37,20 +37,30 @@ function content_5e8e16fbd9e159_30953769 (Smarty_Internal_Template $_smarty_tpl)
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
-                <!--<li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="nav navbar-nav navbar-left">
+                <?php if ((($tmp = @$_SESSION['user']['is_admin'])===null||$tmp==='' ? 0 : $tmp) == 1) {?>
+                <li><a href="/admin">Admin</a></li>
+                <?php }?>
+            </ul>
 
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>--?
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/cart">Cart (2)</a></li>
+                <?php if (!isset($_SESSION['user'])) {?>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                    <?php } else { ?>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['user']['email'];?>
+<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                <?php }?>
+
+
+
             </ul>
         </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

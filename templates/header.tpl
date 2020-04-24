@@ -14,20 +14,29 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
-                <!--<li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="nav navbar-nav navbar-left">
+                {if $smarty.session.user.is_admin|default:0 == 1}
+                <li><a href="/admin">Admin</a></li>
+                {/if}
+            </ul>
 
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>--?
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/cart">Cart (2)</a></li>
+                {if !isset($smarty.session.user)}
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                    {else}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{$smarty.session.user.email}<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </li>
+                {/if}
+
+
+
             </ul>
         </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
