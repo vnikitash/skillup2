@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-04-24 17:35:05
+/* Smarty version 3.1.34-dev-7, created on 2020-04-24 18:45:28
   from '/app/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ea32349afa8e6_03991832',
+  'unifunc' => 'content_5ea333c81cedd9_16353443',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0396b4ca9977abb398697611c6b73df89d9d80da' => 
     array (
       0 => '/app/templates/index.tpl',
-      1 => 1587749704,
+      1 => 1587753926,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ea32349afa8e6_03991832 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ea333c81cedd9_16353443 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4138679975ea32349999446_48284358', 'main');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10400172605ea333c802aaf1_56336743', 'main');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layout.tpl');
 }
 /* {block 'main'} */
-class Block_4138679975ea32349999446_48284358 extends Smarty_Internal_Block
+class Block_10400172605ea333c802aaf1_56336743 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_4138679975ea32349999446_48284358',
+    0 => 'Block_10400172605ea333c802aaf1_56336743',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -105,7 +105,7 @@ $_smarty_tpl->tpl_vars['i']->value = 1;
 if ($_smarty_tpl->tpl_vars['i']->value <= ceil($_smarty_tpl->tpl_vars['count']->value/$_smarty_tpl->tpl_vars['perPage']->value)) {
 for ($_foo=true;$_smarty_tpl->tpl_vars['i']->value <= ceil($_smarty_tpl->tpl_vars['count']->value/$_smarty_tpl->tpl_vars['perPage']->value); $_smarty_tpl->tpl_vars['i']->value++) {
 ?>
-                        <?php if (($_GET['category_id'])) {?>
+                        <?php if (((($tmp = @$_GET['category_id'])===null||$tmp==='' ? 0 : $tmp))) {?>
                             <li  class="<?php if (((($tmp = @$_GET['page'])===null||$tmp==='' ? 1 : $tmp)) == $_smarty_tpl->tpl_vars['i']->value) {?>active<?php }?>"><a href="?page=<?php echo $_smarty_tpl->tpl_vars['i']->value;?>
 &category_id=<?php echo $_GET['category_id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['i']->value;?>

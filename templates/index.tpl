@@ -38,7 +38,7 @@
                         </a>
                     </li>
                     {for $i = 1; $i <= ceil($count / $perPage); $i++}
-                        {if ($smarty.get.category_id)}
+                        {if ($smarty.get.category_id|default:0)}
                             <li  class="{if ($smarty.get.page|default:1) == $i}active{/if}"><a href="?page={$i}&category_id={$smarty.get.category_id}">{$i}</a></li>
                             {else}
                             <li  class="{if ($smarty.get.page|default:1) == $i}active{/if}"><a href="?page={$i}">{$i}</a>
