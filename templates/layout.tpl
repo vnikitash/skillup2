@@ -1,8 +1,8 @@
 <html>
 <head>
-    <script src="jquery.js"></script>
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <script src="bootstrap.min.js"></script>
+    <script src="/jquery.js"></script>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <script src="/bootstrap.min.js"></script>
 </head>
 <body>
 

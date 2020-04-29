@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-04-24 18:32:18
+/* Smarty version 3.1.34-dev-7, created on 2020-04-29 17:47:27
   from '/app/templates/header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ea330b26aabc3_57130091',
+  'unifunc' => 'content_5ea9bdaf56d662_67129247',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '62a57e98dc59eb9980b333f8b11c64d5b8ec7c70' => 
     array (
       0 => '/app/templates/header.tpl',
-      1 => 1587753135,
+      1 => 1588182445,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ea330b26aabc3_57130091 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ea9bdaf56d662_67129247 (Smarty_Internal_Template $_smarty_tpl) {
 ?><nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -39,13 +39,17 @@ function content_5ea330b26aabc3_57130091 (Smarty_Internal_Template $_smarty_tpl)
 
             <ul class="nav navbar-nav navbar-left">
                 <?php if ((($tmp = @$_SESSION['user']['is_admin'])===null||$tmp==='' ? 0 : $tmp) == 1) {?>
-                <li><a href="/admin">Admin</a></li>
+                <li><a href="/admin">Admin Categories</a></li>
+                <li><a href="/admin/products">Admin Products</a></li>
+                <li><a href="/admin/users">Admin Users</a></li>
+                <li><a href="/admin/orders">Admin Orders</a></li>
                 <?php }?>
             </ul>
 
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/cart">Cart (2)</a></li>
+                <li><a href="/cart">Cart (<?php echo $_smarty_tpl->tpl_vars['cart_count']->value;?>
+)</a></li>
                 <?php if (!isset($_SESSION['user'])) {?>
                     <li><a href="/login">Login</a></li>
                     <li><a href="/register">Register</a></li>

@@ -16,13 +16,16 @@
 
             <ul class="nav navbar-nav navbar-left">
                 {if $smarty.session.user.is_admin|default:0 == 1}
-                <li><a href="/admin">Admin</a></li>
+                <li><a href="/admin">Admin Categories</a></li>
+                <li><a href="/admin/products">Admin Products</a></li>
+                <li><a href="/admin/users">Admin Users</a></li>
+                <li><a href="/admin/orders">Admin Orders</a></li>
                 {/if}
             </ul>
 
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/cart">Cart (2)</a></li>
+                <li><a href="/cart">Cart ({$cart_count})</a></li>
                 {if !isset($smarty.session.user)}
                     <li><a href="/login">Login</a></li>
                     <li><a href="/register">Register</a></li>

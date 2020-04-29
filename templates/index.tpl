@@ -23,7 +23,12 @@
                             <h5>{$product['name']}</h5>
                             <p>Price {$product['price']}$</p>
                             <p>Category {$product['category_id']}</p>
-                            <p><a href="#" class="btn btn-success" role="button">Buy!</a></p>
+                            <p>
+                                <form action="/cart/add" method="POST">
+                                    <input type="hidden" name="product_id" value="{$product['id']}">
+                                    <input type="submit" value="Buy!" class="btn btn-success">
+                                </form>
+                            </p>
                         </div>
                     </div>
                 </div>

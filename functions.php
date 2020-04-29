@@ -19,8 +19,6 @@ function getProducts(int $page = 1, int $perPage = 9, ?int $categoryId = null): 
 
     $skip = ($page - 1) * $perPage; // page 1 => skip = 0 //page 2 => skip 9 // page 3 => skip 18
 
-
-
     $query = "SELECT * FROM `products` ";
 
     if ($categoryId) {
@@ -59,6 +57,9 @@ function getCategories(): array
 
 function createUser(string $email, string $password): array
 {
+
+    checkSecureEmail($email);
+
     $user = findUserByEmail($email);
 
     if ($user) {
@@ -148,7 +149,7 @@ function processLoginRequest() {
     if ($method === 'GET') {
         getLoginView();
     } else if ($method === 'POST') {
-        $email = htmlspecialchars($_POST['email'] ?? '');
+        $email = $_POST['email'] ?? '';
         $password = htmlspecialchars($_POST['password'] ?? '');
         if (empty($email) || empty($password)) {
             die("Email and pass should be");
@@ -169,7 +170,7 @@ function processRegisterRequest() {
     if ($method === 'GET') {
         getRegisterView();
     } else if ($method === 'POST') {
-        $email = htmlspecialchars($_POST['email'] ?? '');
+        $email = htmlspecialchars($_POST['email']) ?? '';
         $password = htmlspecialchars($_POST['password'] ?? '');
         if (empty($email) || empty($password)) {
             die("Email and pass should be");
@@ -180,13 +181,65 @@ function processRegisterRequest() {
     }
 }
 
+
+function processCartRequest(?string $action)
+{
+    switch ($action) {
+        case "add":
+            if (!isset($_POST['product_id']) || !is_numeric($_POST['product_id'])) {
+                redirectToMain(['error' => 'Product ID is incorrect']);
+                die();
+            }
+
+            $productId = (int) $_POST['product_id'];
+
+            addToCart($productId);
+
+            redirectToMain();
+            break;
+        case 'inc':
+            break;
+        case 'dec':
+            break;
+        case 'delete':
+            break;
+        case 'list':
+        default:
+            getCartView();
+            break;
+    }
+}
+
+
+function addToCart(int $productId) {
+    $db = getDBConnection();
+
+    $res = $db->query("SELECT * FROM products WHERE id = $productId LIMIT 1");
+
+    if ($res->num_rows === 0) {
+        redirectToMain(['error' => "Item with ID: $productId does not exist"]);
+        die();
+    }
+
+    $product = $res->fetch_assoc();
+
+    if (isset($_SESSION['cart'][$product['id']])) {
+        $_SESSION['cart'][$product['id']]['count'] += 1;
+    } else {
+        $product['count'] = 1;
+        $_SESSION['cart'][$product['id']] = $product;
+    }
+
+    redirectToMain();
+}
+
 function processLogoutRequest()
 {
     unset($_SESSION['user']);
     redirectToMain();
 }
 
-function processAdminRequest()
+function processAdminRequest(string $adminEntity, ?string $adminAction = null)
 {
     $isAdmin = $_SESSION['user']['is_admin'] ?? 0;
 
@@ -194,7 +247,107 @@ function processAdminRequest()
         redirectToMain();
     }
 
-    die("Welcome ADMIN!");
+    $adminAction = $adminAction ?? 'categories';
+
+    switch ($adminEntity) {
+        case "categories":
+            adminCategories($adminAction);
+            break;
+        case "products":
+            adminProducts($adminAction);
+            break;
+        case "orders":
+            adminOrders($adminAction);
+            break;
+        case "users":
+            adminUsers($adminAction);
+            break;
+    }
+}
+
+function adminCategories($action)
+{
+    switch ($action) {
+        case "create":
+            break;
+        case "update":
+            break;
+        case "delete":
+            break;
+        case "list":
+        default:
+            getAdminCategoriesView();
+            break;
+    }
+}
+
+function adminProducts($action)
+{
+    switch ($action) {
+        case "create":
+            break;
+        case "update":
+            break;
+        case "delete":
+            break;
+        case "list":
+        default:
+            getAdminProductsView();
+            break;
+    }
+}
+
+function adminOrders($action)
+{
+    switch ($action) {
+        case "create":
+            break;
+        case "update":
+            break;
+        case "delete":
+            break;
+        case "list":
+        default:
+            getAdminOrdersView();
+            break;
+    }
+}
+
+function adminUsers($action)
+{
+    switch ($action) {
+        case "create":
+            break;
+        case "update":
+            if (!isset($_POST['email']) || !isset($_POST['user_id']) || $_POST['user_id'] == $_SESSION['user']['id']) {
+                die("error");
+            }
+
+            $isAdmin = (int) isset($_POST['admin']);
+            $userId = (int) $_POST['user_id'];
+            updateUser($userId, $_POST['email'], $isAdmin);
+            break;
+        case "delete":
+            break;
+        case "list":
+        default:
+            getAdminUsersView();
+            break;
+    }
+}
+
+function updateUser(int $userId, string $email, int $isAdmin)
+{
+    $db = getDBConnection();
+
+
+
+
+    $query = "UPDATE users SET `email` = '$email', `is_admin` = $isAdmin WHERE id = $userId";
+
+    $db->query($query);
+    header("Location: /admin/users");
+    die();
 }
 
 function processOrdersRequest() {
@@ -238,9 +391,102 @@ function getRegisterView()
     $smarty->display('form.tpl');
 }
 
-function redirectToMain()
+function getCartView()
 {
-    header("Location: /products");
+    global $smarty;
+    $total = 0;
+
+    foreach ($_SESSION['cart'] ?? [] as $product) {
+        $total += $product['count'] * $product['price'];
+    }
+
+    $smarty->assign('cartItems', $_SESSION['cart'] ?? []);
+    $smarty->assign('total', $total);
+    $smarty->display('cart.tpl');
+}
+
+function getAdminCategoriesView()
+{
+    global $smarty;
+
+    $smarty->display('admin/categories.tpl');
+}
+
+function getAdminProductsView()
+{
+    global $smarty;
+
+    $smarty->display('admin/products.tpl');
+}
+
+function getAdminUsersView()
+{
+
+
+    $query = "
+    SELECT 
+	users.id, 
+	users.email, 
+	DATE_FORMAT(users.created_at, '%d.%m.%Y') as created_at,
+	users.is_admin,
+	COUNT(orders.id) as orders_count
+FROM users 
+	LEFT JOIN orders 
+		ON orders.user_id = users.id 
+GROUP BY users.id
+    ";
+
+    $db = getDBConnection();
+    $res = $db->query($query);
+
+    global $smarty;
+
+    $smarty->assign('users', $res->num_rows === 0 ? [] : $res->fetch_all(MYSQLI_ASSOC));
+    $smarty->display('admin/users.tpl');
+}
+
+function getAdminOrdersView()
+{
+    global $smarty;
+
+    $smarty->display('admin/orders.tpl');
+}
+
+function redirectToMain(?array $getParams = [])
+{
+    $url = '/products';
+    if ($getParams) {
+        $url .= '?';
+    }
+    header("Location: $url" . http_build_query($getParams));
     die();
+}
+
+function getCartCount()
+{
+    $count = 0;
+    foreach ($_SESSION['cart'] ?? [] as $product)
+    {
+        $count += $product['count'];
+    }
+
+    return $count;
+}
+
+function checkSecureEmail($email)
+{
+    return true;
+    $abc = array_merge(range("a", "z"), range('A', 'Z'), range(0,9));
+    $abc[] = "@";
+    $abc[] = "!";
+    $abc[] = ".";
+    $abc[] = "-";
+    $tmp = implode("", $abc);
+
+    foreach (str_split($email) as $letter) {
+        if (strpos($tmp, $letter) === false) {
+            die(":(");
+        }
+    }
 }
 
