@@ -4,6 +4,7 @@ $db = null;
 
 const DEFAULT_PAGE = 1;
 const DEFAULT_PER_PAGE = 9;
+const IMAGES_FOLDER = 'images/';
 
 
 function getDBConnection(): mysqli
@@ -285,6 +286,7 @@ function adminProducts($action)
 {
     switch ($action) {
         case "create":
+            uploadProduct();
             break;
         case "update":
             break;
@@ -295,6 +297,49 @@ function adminProducts($action)
             getAdminProductsView();
             break;
     }
+}
+
+function uploadProduct()
+{
+    $db = getDBConnection();
+
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $categoryId = (int) $_POST['category_id'];
+
+    $res = $db->query("SELECT * FROM categories WHERE id = $categoryId");
+    if ($res->num_rows === 0) {
+        die("error");
+    }
+
+    //TODO check category exists and string is secure
+    $query = "
+        INSERT INTO products
+        SET 
+          `name` = '$name',
+          `price` = '$price',
+          `category_id` = '$categoryId'
+    ";
+
+    $db->query($query);
+    $productId = $db->insert_id;
+
+    $from = $_FILES['image']['tmp_name'];
+
+    $ext = '.jpg';
+
+    if ($_FILES['image']['type'] === 'image/png') {
+        $ext = '.png';
+    }
+
+    $destination = __DIR__ . '/' . IMAGES_FOLDER . '/' . $productId . $ext;
+    move_uploaded_file($from, $destination);
+    redirectToMain();
+}
+
+function showImage()
+{
+
 }
 
 function adminOrders($action)
@@ -415,6 +460,10 @@ function getAdminCategoriesView()
 function getAdminProductsView()
 {
     global $smarty;
+
+    $categories = getCategories();
+
+    $smarty->assign('categories', $categories);
 
     $smarty->display('admin/products.tpl');
 }

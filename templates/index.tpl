@@ -18,7 +18,7 @@
                 {foreach $products as $product}
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail">
-                        <img src="https://st2.depositphotos.com/3904951/8925/v/450/depositphotos_89250312-stock-illustration-photo-picture-web-icon-in.jpg" alt="...">
+                        <img src="/product_images/{$product['id']}" alt="...">
                         <div class="caption">
                             <h5>{$product['name']}</h5>
                             <p>Price {$product['price']}$</p>

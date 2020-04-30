@@ -13,6 +13,8 @@ services:
   php:
     image: webdevops/php:7.4
     container_name: example-php-1
+    environment:
+      PHP_UPLOAD_MAX_FILESIZE: 100M
     volumes:
       - "./:/app"
     working_dir: '/app'

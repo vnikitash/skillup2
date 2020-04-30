@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.34-dev-7, created on 2020-04-29 17:04:41
+/* Smarty version 3.1.34-dev-7, created on 2020-04-30 17:10:48
   from '/app/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.34-dev-7',
-  'unifunc' => 'content_5ea9b3a93d30d7_18689468',
+  'unifunc' => 'content_5eab069827f531_97763948',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0396b4ca9977abb398697611c6b73df89d9d80da' => 
     array (
       0 => '/app/templates/index.tpl',
-      1 => 1588179876,
+      1 => 1588266574,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ea9b3a93d30d7_18689468 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eab069827f531_97763948 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6036893415ea9b3a911c924_89717688', 'main');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9962644465eab06981719b5_86380486', 'main');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layout.tpl');
 }
 /* {block 'main'} */
-class Block_6036893415ea9b3a911c924_89717688 extends Smarty_Internal_Block
+class Block_9962644465eab06981719b5_86380486 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'main' => 
   array (
-    0 => 'Block_6036893415ea9b3a911c924_89717688',
+    0 => 'Block_9962644465eab06981719b5_86380486',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -74,7 +74,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['product']->value) {
 ?>
                 <div class="col-sm-6 col-md-4">
                     <div class="thumbnail">
-                        <img src="https://st2.depositphotos.com/3904951/8925/v/450/depositphotos_89250312-stock-illustration-photo-picture-web-icon-in.jpg" alt="...">
+                        <img src="/product_images/<?php echo $_smarty_tpl->tpl_vars['product']->value['id'];?>
+" alt="...">
                         <div class="caption">
                             <h5><?php echo $_smarty_tpl->tpl_vars['product']->value['name'];?>
 </h5>

@@ -48,6 +48,23 @@ switch ($action) {
     case "products":
         processProductsRequest();
         break;
+
+    case "product_images":
+        $productId = array_shift($parts);
+
+        if (file_exists(__DIR__ . '/images/' . $productId . '.png')) {
+            header("Content-Type: image/png");
+            die(file_get_contents(__DIR__ . '/images/' . $productId . '.png'));
+        }
+
+        if (file_exists(__DIR__ . '/images/' . $productId . '.jpg')) {
+            header("Content-Type: image/jpeg");
+            die(file_get_contents(__DIR__ . '/images/' . $productId . '.jpg'));
+        }
+
+        die(file_get_contents('https://st2.depositphotos.com/3904951/8925/v/450/depositphotos_89250312-stock-illustration-photo-picture-web-icon-in.jpg'));
+
+        break;
     default:
         redirectToMain();
 
