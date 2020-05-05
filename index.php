@@ -5,6 +5,8 @@ error_reporting(E_ALL);
 
 
 
+
+
 class Product
 {
     public function __construct($id)
