@@ -3,273 +3,223 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+require_once "temp.php";
+
+$p = new Payment();
+$p->transaction();
+$p->transaction();
+
+$p2 = new Payment();
+$p2->transaction();
 
 
 
 
-class Product
-{
-    public function __construct($id)
-    {
-        //Load product from DB by ID
-    }
 
-    public function updateName(string $name) {
-        //UPDATE IN DB
-    }
 
-    public function updatePrice(float $price)
-    {
-        //UPDATE IN DB
-    }
 
-    public function updateSorting(int $sorting)
-    {
-        //UPDATE IN DB
+
+
+$p = new Payment();
+
+for ($i = 0; $i < 20; $i++) {
+    if (rand(0,2) === 2) {
+        $p->transaction();
     }
 }
 
-$product = new Product(3);
 
-$product->updateName("Samsung");
-$product->updatePrice(11);
-$product->updateSorting("Samsung");
+$p2 = new Payment();
 
-//NO EXCEPTIONS
-
-
-
+for ($j = 0; $j < 20; $j++) {
+    if (rand(0,2) === 2) {
+        $p->transaction();
+    }
+}
 
 
 
 
 
-
+echo Payment::getCounter();
 
 
 
 
 
 
-class Student
+
+
+
+die();
+/*
+class Deanonymizer
 {
-    private $filename;
-    public $firstName;
-    public $lastName;
-    public $age;
 
-    public function __construct(string $firstName, string $lastName, int $age)
-    {
-        $this->filename = microtime(true) . rand(1,100) . '.txt';
-        $this->age = $age;
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
-    }
+    protected static $name = "???";
+    public static $countUser = 0;
+    public static $countTest = 0;
 
-    public function test1()
+    public static function whoAmI()
     {
-        file_put_contents($this->filename, 1, FILE_APPEND);
-    }
-
-    public function test2()
-    {
-        file_put_contents($this->filename, 2, FILE_APPEND);
-    }
-
-    public function test3()
-    {
-        file_get_contents($this->filename);
-        unlink($this->filename);
-    }
-
-    public function __destruct()
-    {
-        if (file_exists($this->filename)) {
-            unlink($this->filename);
+        if (static::$name === "User") {
+            self::$countUser++;
+        } else {
+            self::$countTest++;
         }
     }
 }
 
-
-$alex = new Student("Alex", "Alekseenko", 40);
-$oleg = new Student("Oleg", "Olegov", 36);
-
-
-
-$alex->test1();
-$oleg->test2();
-die();
-$oleg->test1();
-$alex->test2();
-$oleg->test3();
-$alex->test3();
-
-die();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class PaymentSystem
+class User extends Deanonymizer
 {
-
-    protected $tax = 0.01;
-
-    public function pay(int $amount)
-    {
-        echo get_class($this) . "  you will pay " . $amount * (1 + $this->tax) . "<br>";
-    }
+    protected static $name = "User";
 }
 
-class LiqPay extends PaymentSystem
+class Test extends Deanonymizer
 {
-    protected $tax = 0.02;
-}
 
-class iPay extends PaymentSystem
-{
-    protected $tax = 0.0015;
+    protected static $name = "Test";
 }
 
 
-$liqPay = new LiqPay();
-$iPay= new iPay();
-
-$liqPay->pay(100);
-$iPay->pay(100);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-die();
-
-class Payment
-{
-    public $requestTime;
-    public $transactionNumber;
-
-    public function processPayment(float $amount)
-    {
-        $this->requestTime = 'qasdasdad';
-        $this->transactionNumber = "#" . rand(1,100);
-        ///$amount
-        ///
-        /// send email....
-        /// $th
-
-        $this->log("DONE WITH AM: $amount");
+for ($i = 0; $i < 100; $i++) {
+    if (rand(0,1)) {
+        Test::whoAmI();
+        continue;
     }
 
-    private function log(string $data)
-    {
-        file_put_contents("LOG.txt", $data, FILE_APPEND);
+    User::whoAmI();
+}
+
+echo "Users: " . Deanonymizer::$countUser . "<br> Test: " . Deanonymizer::$countTest;
+
+class DB
+{
+    private $db;
+
+    public static function getDbConnection() {
+        $instance = new self();
+        $instance->db = new mysqli();
+        return $instance;
+    }
+
+    public static function update() {
+
+    }
+
+    public static function delete() {
+
     }
 }
 
 
-$payment = new Payment();
-$payment->processPayment(1.1);
+
+DB::update();
+DB::delete();
 
 
 
+*/
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-die();
-class User
+class Loader
 {
-    public $first_name;
-    public $last_name;
-    private $phone;
-
-    public function setFirstName(string $firstName)
+    public function __construct()
     {
-        $this->first_name = $firstName;
+        sleep(5);
     }
 
-    public function setLastName(string $lastName)
+    public function sendRequest()
     {
-        $this->last_name = $lastName;
+        //TODO
     }
 
-    public function setPhone(string $phone)
+    public static function isServiceAvailable()
     {
-        $this->phone = $phone;
+        return (bool) rand(0,1);
     }
-
-    public function getPhone(): ?string
-    {
-        return "+********" . substr($this->phone, -4);
-    }
-
 }
 
 
-$user = new User();
-$user->setFirstName("Viktor");
-$user->setLastName("Nikitash");
-$user->setPhone("+380998887766");
+//Pattern Singleton
+class DBConnection
+{
+    private static $db;
 
-echo $user->first_name . "<br>";
-echo $user->last_name . "<br>";
-echo $user->getPhone() . "<br>";
+    public static function getConnection()
+    {
+        if (self::$db) {
+            echo "OLD CONNECTION<br>";
+            return self::$db;
+        }
+        echo "NEW CONNECTION<br>";
+        return self::$db = new mysqli('db', 'root', '', 'test');
+    }
+}
+
+class DB2
+{
+    private $db;
+
+    public function getConnection()
+    {
+        if ($this->db) {
+            echo "OLD CONNECTION<br>";
+            return $this->db;
+        }
+        echo "NEW CONNECTION<br>";
+        return $this->db = new mysqli('db', 'root', '', 'test');
+    }
+}
 
 
 
 
-die();
+
+class A
+{
+    public static $test = 0;
+    public $test2 = 0;
+}
+
+
+$a = new A();
+$b = new A();
+$c = new A();
+
+$b->test2 = 1;
+
+echo "NON STATIC<br>";
+echo $a->test2 . "<br>";
+echo $b->test2 . "<br>";
+echo $c->test2 . "<br>";
+
+
+A::$test = 12;
+
+echo "STATIC: <br>";
+echo $c::$test . "<br>";
+echo $a::$test . "<br>";
+echo $b::$test . "<br>";
+echo A::$test . "<br>";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
